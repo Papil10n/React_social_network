@@ -1,0 +1,6 @@
+.nav {
+   grid-area: nav;
+   background-color: #00cfff;
+   padding: 20px;
+   min-height: 450px;
+}

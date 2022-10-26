@@ -1,0 +1,11 @@
+.header {
+    grid-area: header;
+    background-color: #0b4f80;
+    position: relative;
+    z-index: 200;
+    height: 70px;
+}
+
+.content {
+    height: 100%;
+}

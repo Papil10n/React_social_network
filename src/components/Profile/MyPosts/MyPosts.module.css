@@ -1,0 +1,16 @@
+.postsBlock {
+    margin-top: -90px;
+    padding: 10px;
+}
+.title {
+    margin-left: 15px;
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-family: "Rage Italic";
+}
+.posts {
+    margin-top: 10px;
+}
+.textareaBlock textarea{
+    resize: none;
+}
