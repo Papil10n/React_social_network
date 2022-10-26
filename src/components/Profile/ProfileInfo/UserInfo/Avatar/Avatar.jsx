@@ -1,11 +1,12 @@
 import s from './Avatar.module.css';
+import noNameUser from '../../../../../assets/images/user.png';
 
 const Avatar = (props) => {
     return (
         <div className={s.user}>
             <div className={s.avatar}>
-                <img src="https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png"
-                     alt="#"/>
+                <img src={props.photo ? props.photo : noNameUser}
+                />
             </div>
         </div>
     )

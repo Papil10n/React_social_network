@@ -3,11 +3,12 @@ import Avatar from "./Avatar/Avatar";
 import Info from "./Info/Info";
 
 const UserInfo = (props) => {
+    console.log(props)
     return (
         <div className={s.descriptionBlock}>
             <div className={s.about}>
-                <Avatar/>
-                <Info/>
+                <Avatar photo={props.profile.photos.small}/>
+                <Info profile={props.profile}/>
             </div>
         </div>
     )

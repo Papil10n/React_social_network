@@ -1,11 +1,16 @@
 import s from './Info.module.css';
 
 const Info = (props) => {
+    console.log(props.profile)
     return (
         <div className={s.info}>
-            <p>Date of Birth: 15 March</p>
-            <p>City: Dnipro</p>
-            <p>Education: Ukrainian State University of Science and Technologies</p>
+            <p>Name: {props.profile.fullName}</p>
+            <p>About: {props.profile.aboutMe}</p>
+            <p>Instagram: {props.profile.contacts.instagram}</p>
+            <p>GitHub: {props.profile.contacts.github}</p>
+            <p>GitHub: {props.profile.contacts.github}</p>
+            <p>Looking for a job: {props.profile.lookingForAJob ? "true" : "false"}</p>
+            <p>Description: {props.profile.lookingForAJobDescription}</p>
         </div>
     )
 }
