@@ -1,0 +1,29 @@
+.dialog{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 40px;
+    border-right: 1px solid white;
+
+}
+
+.dialog a {
+    text-decoration: none;
+    color: beige;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border-bottom: 2px solid white;
+    margin-right: 30px;
+
+}
+.dialog a:active {
+    color: yellow;
+}
+.dialog a:hover {
+    background-color: #0b4f80;
+}
+.img {
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}

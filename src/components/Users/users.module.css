@@ -1,0 +1,70 @@
+.users {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+}
+.user {
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 15px;
+    padding: 15px;
+    transition: all 0.3s ease 0s;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 270px;
+    color: white;
+    text-decoration: none;
+}
+.user:hover {
+    background-color: #08436c;
+    cursor: pointer;
+}
+.userMainInfo {
+    margin-right: 30px;
+
+}
+.userAddInfo {
+
+}
+.photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.button {
+    margin-top: 11px;
+    font-size: 16px;
+    padding: 1px 10px;
+    border-radius: 10px;
+    border: white;
+    cursor: pointer;
+}
+.location {
+    margin-bottom: 10px;
+}
+.selectedPage {
+    font-size: 20px;
+    display: inline-block;
+    margin-inline: 10px;
+    background-color: rgba(22, 191, 250, 0.5);
+    padding: 1px 9px;
+    border-radius: 50%;
+    border: 1px solid white;
+    font-family: Algerian;
+    cursor: pointer;
+}
+.defaultPage {
+    font-size: 20px;
+    display: inline-block;
+    margin-inline: 10px;
+    padding: 1px 9px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+.pages {
+    text-align: center;
+}

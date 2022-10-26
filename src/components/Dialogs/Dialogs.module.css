@@ -1,0 +1,98 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogsItems {
+    padding: 10px;
+}
+
+.messages {
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.dialogBlock {
+    height: 350px;
+    padding: 5px;
+    overflow-y: scroll;
+}
+
+.dialog {
+}
+
+.dialog a {
+    text-decoration: none;
+    color: beige;
+}
+
+.dialog a:active {
+    color: yellow;
+}
+
+.active a {
+    color: gold;
+}
+
+.messageItem span {
+    border: 1px solid white;
+    padding: 3px 15px;
+    border-radius: 15px;
+}
+
+
+.mySide {
+    color: yellow;
+    margin-left: 30px;
+    font-size: 20px;
+    margin-bottom: 15px;
+
+}
+
+.mateSide {
+    margin-left: 15px;
+    font-size: 20px;
+    text-align: end;
+    margin-right: 30px;
+    margin-bottom: 15px;
+}
+
+.spawnMessage {
+    margin-top: 30px;
+    float: right;
+}
+
+.spawnTextArea {
+    display: block;
+    margin-bottom: 10px;
+    background: rgba(0, 207, 255, 0.65);
+    font-size: 22px;
+    color: white;
+    border-radius: 15px;
+    padding: 5px 0px 0px 10px;
+    resize: none;
+}
+.spawnTextArea::placeholder {
+    padding-left: 5px;
+    padding-top: 5px;
+    color: rgba(255,255,255,0.5);
+}
+
+.spawnTextBtn {
+    float: right;
+    font-size: 18px;
+    padding: 3px 20px;
+    border-radius: 10px;
+    background: #dcdcdc;
+    color: #001372;
+    border: 1px solid white;
+    transition: all 0.3s ease 0s;
+}
+
+.spawnTextBtn:hover {
+    transform: scale(0.95);
+}
+
+.spawnTextBtn:active {
+    transform: scale(0.90)
+}

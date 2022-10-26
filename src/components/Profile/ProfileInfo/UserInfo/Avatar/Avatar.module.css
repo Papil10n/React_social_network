@@ -1,0 +1,16 @@
+.user {
+    position: relative;
+    top: -70px;
+}
+
+.avatar {
+    margin-right: 60px;
+}
+
+.avatar img {
+    width: 120px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0px 0px 5px black;
+}
+

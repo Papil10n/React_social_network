@@ -1,0 +1,26 @@
+.logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 30px;
+    height: 100%;
+}
+
+.img {
+    margin-right: 15px;
+}
+
+.img img {
+    border-radius: 50%;
+    width: 50px;
+}
+
+.text {
+    color: white;
+    font-family: Bahnschrift;
+    line-height: 1px;
+}
+
+.substring {
+    text-align: center;
+}

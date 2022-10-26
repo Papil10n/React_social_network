@@ -1,0 +1,16 @@
+.item {
+   margin-block: 5px;
+}
+.obj {
+   color: #000000;
+   text-decoration: none;
+   font-family: Bahnschrift;
+   padding: 5px;
+   transition: all 0.3s ease 0s;
+}
+.active {
+   transition: all 0.3s ease 0s;
+   background-color: rgba(113, 113, 162, 0.45);
+   border-bottom-left-radius: 15px;
+   border-top-right-radius: 15px;
+}

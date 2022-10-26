@@ -1,0 +1,9 @@
+.descriptionBlock {
+    padding: 10px;
+}
+
+.about {
+    display: flex;
+    max-width: 85%;
+    margin: 0 auto;
+}
