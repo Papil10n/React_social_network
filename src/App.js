@@ -9,7 +9,7 @@ import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
-
+import LoginPage from "./components/Login/Login";
 
 
 const App = (props) => {
@@ -19,12 +19,14 @@ const App = (props) => {
             <Navbar/>
             <div className='app-wrapper-content'>
                 <Routes>
+                    <Route path='/login' element={<LoginPage />}/>
+                    <Route path='/' element={<LoginPage />}/>
                     <Route path='/profile/:userId'
-                           element={<ProfileContainer />}/>
+                           element={<ProfileContainer/>}/>
                     <Route path='/profile'
-                           element={<ProfileContainer />}/>
+                           element={<ProfileContainer/>}/>
                     <Route path='/users'
-                           element={<UsersContainer />}/>
+                           element={<UsersContainer/>}/>
                     <Route path='/dialogs/*'
                            element={<DialogsContainer/>}/>
                     <Route path='/news'

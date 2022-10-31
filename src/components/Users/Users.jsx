@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./users.module.css";
 import userPhoto from "../../assets/images/user.png"
-import {NavLink} from "react-router-dom";
+import {NavLink, Navigate} from "react-router-dom";
 import {unfollow_u} from "../../redux/users-reducer";
 
 
@@ -11,6 +11,8 @@ const Users = (props) => {
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
+
+    // if (props.isAuth == false) return <Navigate to={'/login'} />
 
     return <div>
 

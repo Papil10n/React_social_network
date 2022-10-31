@@ -1,43 +1,39 @@
 import React from "react";
 import Profile from "./Profile";
-import axios from "axios";
 import {connect} from "react-redux";
-import {setUserProfile} from "../../redux/profile-reducer";
-import {useLocation, useParams} from "react-router-dom";
+import {getStatus, getUserProfile, updateStatus} from "../../redux/profile-reducer";
+import {Navigate, useLocation, useParams} from "react-router-dom";
 import {toggleIsFetching} from "../../redux/users-reducer";
 import Preloader from "../common/Preloader/Preloader";
-import {usersAPI} from "../../api/api";
+import {compose} from "redux";
 
 
 class ProfileContainer extends React.Component {
     componentDidMount() {
-        let userId = this.props.router.params.userId ;
+        let userId = this.props.router.params.userId;
         if (!userId) {
-            userId = this.props.id;
+            // userId = this.props.id;
+            userId = 1049;
         }
-        this.props.toggleIsFetching(true);
-        usersAPI.getProfile(userId)
-            .then(response => {
-                this.props.toggleIsFetching(false);
-                this.props.setUserProfile(response.data);
-            });
+        this.props.getUserProfile(userId);
+        this.props.getStatus(userId);
     }
 
     render() {
         return <>
             {this.props.isFetching ?
-            <Preloader/> : <Profile {...this.props} profile={this.props.profile}/>}
+                <Preloader/> : <Profile {...this.props} profile={this.props.profile} status={this.props.status}
+                                        updateStatus={this.props.updateStatus}/>}
         </>
     }
 }
 
-
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
     id: state.auth.userId,
-    isFetching: state.usersPage.isFetching
+    isFetching: state.usersPage.isFetching,
+    status: state.profilePage.status
 })
-
 
 function withRouter(Component) {
     function ComponentWithRouterProp(props) {
@@ -54,4 +50,8 @@ function withRouter(Component) {
     return ComponentWithRouterProp;
 }
 
-export default connect(mapStateToProps, {setUserProfile, toggleIsFetching})(withRouter(ProfileContainer));
+export default compose(
+    connect(mapStateToProps, {toggleIsFetching, getUserProfile, getStatus, updateStatus}),
+    withRouter,
+    // withAuthRedirect
+)(ProfileContainer)
