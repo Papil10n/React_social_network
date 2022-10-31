@@ -20,7 +20,7 @@
 }
 .user:hover {
     background-color: #08436c;
-    cursor: pointer;
+    cursor: default;
 }
 .userMainInfo {
     margin-right: 30px;
@@ -67,4 +67,8 @@
 }
 .pages {
     text-align: center;
+}
+.name {
+    font-size: 17px;
+    color: white;
 }

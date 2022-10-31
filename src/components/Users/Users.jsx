@@ -2,9 +2,10 @@ import React from "react";
 import styles from "./users.module.css";
 import userPhoto from "../../assets/images/user.png"
 import {NavLink} from "react-router-dom";
+import {unfollow_u} from "../../redux/users-reducer";
+
 
 const Users = (props) => {
-
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
@@ -17,7 +18,11 @@ const Users = (props) => {
             {pages.map(pageNum => {
                 return (
                     <div onClick={(event) => {
+                        console.log(props.currentPage)
                         props.onPageChanged(pageNum)
+                        props.setCurrentPage(pageNum)
+                        console.log(props.currentPage)
+
                     }}
                          className={props.currentPage === pageNum ? styles.selectedPage : styles.defaultPage}> {pageNum}
                     </div>)
@@ -26,20 +31,26 @@ const Users = (props) => {
         <div className={styles.users}>
             {
                 props.users.map(user =>
-                    <NavLink to={'/profile/' + user.id} className={styles.user} key={user.id}>
+                    <div className={styles.user} key={user.id}>
                         <div className={styles.userMainInfo}>
-                            <img src={user.photos.small != null
-                                ? user.photos.small
-                                : userPhoto} className={styles.photo}/>
-                            <div>{user.name}</div>
+                            <NavLink to={'/profile/' + user.id}>
+                                <img src={user.photos.small != null
+                                    ? user.photos.small
+                                    : userPhoto} className={styles.photo}/>
+                                <div className={styles.name}>{user.name}</div>
+                            </NavLink>
+
                             {
                                 user.followed
-                                    ? <button className={styles.button} onClick={() => {
-                                        props.unfollow(user.id)
-                                    }}> Unfollow </button>
-                                    : <button className={styles.button} onClick={() => {
-                                        props.follow(user.id)
-                                    }}> Follow </button>
+                                    ? <button disabled={props.followingInProgress.some(id => id === user.id)}
+                                              className={styles.button} onClick={() => {props.unfollow_u(user.id)}}>
+                                        Unfollow
+                                    </button>
+                                    : <button disabled={props.followingInProgress.some(id => id === user.id)}
+                                              className={styles.button} onClick={() => {
+                                                  props.follow_f(user.id)}}>
+                                        Follow
+                                    </button>
                             }
                         </div>
                         <div className={styles.userAddInfo}>
@@ -47,7 +58,7 @@ const Users = (props) => {
                             <div className={styles.location}>{"user.location.country"}</div>
                             <div>{"user.location.city"}</div>
                         </div>
-                    </NavLink>)
+                    </div>)
             }
         </div>
     </div>
