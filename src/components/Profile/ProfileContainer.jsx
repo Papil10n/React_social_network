@@ -12,8 +12,8 @@ class ProfileContainer extends React.Component {
     componentDidMount() {
         let userId = this.props.router.params.userId;
         if (!userId) {
-            // userId = this.props.id;
-            userId = 26468;
+            userId = this.props.id;
+            // userId = 26468;
         }
         this.props.getUserProfile(userId);
         this.props.getStatus(userId);
@@ -21,9 +21,14 @@ class ProfileContainer extends React.Component {
 
     render() {
         return <>
-            {this.props.isFetching ?
-                <Preloader/> : <Profile {...this.props} profile={this.props.profile} status={this.props.status}
-                                        updateStatus={this.props.updateStatus}/>}
+            {
+                !this.userId ? <Navigate to={'/login'} />
+                    : this.props.isFetching ?
+                <Preloader/>
+                        : <Profile {...this.props} profile={this.props.profile} status={this.props.status}
+                updateStatus={this.props.updateStatus}/>
+                }
+            }
         </>
     }
 }
