@@ -18,12 +18,10 @@ class ProfileContainer extends React.Component {
         this.props.getUserProfile(userId);
         this.props.getStatus(userId);
     }
-
     render() {
         return <>
             {
-                !this.userId ? <Navigate to={'/login'} />
-                    : this.props.isFetching ?
+                 this.props.isFetching ?
                 <Preloader/>
                         : <Profile {...this.props} profile={this.props.profile} status={this.props.status}
                 updateStatus={this.props.updateStatus}/>

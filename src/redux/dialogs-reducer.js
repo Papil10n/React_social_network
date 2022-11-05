@@ -1,5 +1,4 @@
 const ADD_MESSAGE = 'ADD-MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
 
 let initialState = {
     messages: [
@@ -36,7 +35,6 @@ let initialState = {
             img: "https://i0.wp.com/www.cssscript.com/wp-content/uploads/2020/12/Customizable-SVG-Avatar-Generator-In-JavaScript-Avataaars.js.png?fit=438%2C408&ssl=1"
         },
     ],
-    newMessageText: ''
 };
 
 const dialogsReducer = (state = initialState, action) => {
@@ -44,26 +42,16 @@ const dialogsReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_MESSAGE: {
-
-            let newMessage = state.newMessageText;
-
+            let newMessage = action.message;
             return {
                 ...state,
-                newMessageText: "",
                 messages: [...state.messages, {id: 6, from: "me", message: newMessage}],
             };
         }
-
-        case UPDATE_NEW_MESSAGE_TEXT: {
-
-            return {...state, newMessageText: action.newMessage};
-        }
-
         default:
             return state;
     }
 }
 
-export const addMessageActionCreator = () => ({type: ADD_MESSAGE});
-export const updateNewMessageTextActionCreator = (message) => ({type: UPDATE_NEW_MESSAGE_TEXT, newMessage: message});
+export const addMessageActionCreator = (message) => ({type: ADD_MESSAGE, message});
 export default dialogsReducer;
