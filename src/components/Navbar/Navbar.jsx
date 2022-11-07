@@ -6,8 +6,8 @@ const Navbar = (props) => {
     return (
         <nav className={s.nav}>
             <Link path="/profile" linkName="Profile" />
-            <Link path="/users" linkName="Users" />
             <Link path="/dialogs" linkName="Messages" />
+            <Link path="/users" linkName="Users" />
             <Link path="/news" linkName="News" />
             <Link path="/music" linkName="Music" />
             <Link path="/settings" linkName="Settings" />

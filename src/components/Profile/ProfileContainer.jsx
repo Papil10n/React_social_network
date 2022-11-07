@@ -6,6 +6,7 @@ import {Navigate, useLocation, useParams} from "react-router-dom";
 import {toggleIsFetching} from "../../redux/users-reducer";
 import Preloader from "../common/Preloader/Preloader";
 import {compose} from "redux";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 
 
 class ProfileContainer extends React.Component {
@@ -57,5 +58,6 @@ function withRouter(Component) {
 export default compose(
     connect(mapStateToProps, {toggleIsFetching, getUserProfile, getStatus, updateStatus}),
     withRouter,
+    withAuthRedirect
     // withAuthRedirect
 )(ProfileContainer)
