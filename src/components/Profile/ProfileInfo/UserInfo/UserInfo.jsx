@@ -1,6 +1,6 @@
 import s from './UserInfo.module.css';
 import Avatar from "./Avatar/Avatar";
-import Info from "./Info/Info";
+import InfoWithHooks from "./Info/InfoWithHooks";
 
 const UserInfo = (props) => {
 
@@ -8,7 +8,7 @@ const UserInfo = (props) => {
         <div className={s.descriptionBlock}>
             <div className={s.about}>
                 <Avatar photo={props.profile.photos.small}/>
-                <Info profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
+                <InfoWithHooks profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
             </div>
         </div>
     )

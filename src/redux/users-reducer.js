@@ -73,7 +73,7 @@ export const toggleFollowingProgress = (isFollowing, userId) => ({type: TOGGLE_I
 
 // thunks
 // thunk creator hof
-export const getUsers = (currentPage, pageSize) => {
+export const requestUsers = (currentPage, pageSize) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
         usersAPI.getUsers(currentPage, pageSize).then(data => {
