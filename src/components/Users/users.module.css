@@ -45,29 +45,6 @@
 .location {
     margin-bottom: 10px;
 }
-.selectedPage {
-    font-size: 20px;
-    display: inline-block;
-    margin-inline: 10px;
-    background-color: rgba(22, 191, 250, 0.5);
-    padding: 1px 9px;
-    border-radius: 50%;
-    border: 1px solid white;
-    font-family: Algerian;
-    cursor: pointer;
-}
-.defaultPage {
-    font-size: 20px;
-    display: inline-block;
-    margin-inline: 10px;
-    padding: 1px 9px;
-    border-radius: 50%;
-    cursor: pointer;
-
-}
-.pages {
-    text-align: center;
-}
 .name {
     font-size: 17px;
     color: white;
