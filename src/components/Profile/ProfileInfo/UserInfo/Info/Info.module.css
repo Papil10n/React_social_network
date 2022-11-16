@@ -1,4 +1,52 @@
 .info {
-    margin-top: 10px;
-    line-height: 10px;
+    margin-top: 0px;
+    line-height: 5px;
+    font-family: Arial;
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: baseline;
+    gap: 25px;
 }
+.contac {
+    line-height: 1px;
+    letter-spacing: 1.5px;
+}
+
+.status {
+    line-height: normal;
+}
+.fileInput {
+    position: absolute;
+    z-index: 100;
+    width: 118px;
+    top: 95px;
+    left: 86px;
+    transition: all 0.3s ease 0s;
+    opacity: 50%;
+}
+.fileInput:hover {
+    opacity: 100%;
+}
+.fileInput::-webkit-file-upload-button {
+    visibility: hidden;
+}
+.fileInput::before {
+    content: 'Select some files';
+    display: inline-block;
+    background-color: #00cfff;
+    border: 1px solid black;
+    color: black;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 9pt;
+}
+.fileInput:hover::before {
+    border-color: white;
+}
+

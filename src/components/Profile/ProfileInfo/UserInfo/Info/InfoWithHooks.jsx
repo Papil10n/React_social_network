@@ -1,5 +1,6 @@
 import s from './Info.module.css';
 import React, {useEffect, useState} from "react";
+import style from "./Info.module.css";
 
 const InfoWithHooks = (props) => {
     let [editMode, setEditMode] = useState(false);
@@ -22,10 +23,12 @@ const InfoWithHooks = (props) => {
 
     return (
         <div className={s.info}>
-            <p>Name: {props.profile.fullName}</p>
+            <p><b>Name:</b> {props.profile.fullName}</p>
+            <p><b>Looking for a job:</b> {props.profile.lookingForAJob ? "Yes" : "No"}</p>
             { !editMode &&
                 <div>
-                    <span onDoubleClick={activateEditMode}>{props.status || "-------" }</span>
+                    <b>Status: </b>
+                    <span className={style.status} onDoubleClick={activateEditMode}>{props.status || "-------" }</span>
                 </div>
             }
             {editMode &&
@@ -33,14 +36,20 @@ const InfoWithHooks = (props) => {
                 <input autoFocus={true} onChange={onStatusChange} onBlur={deactivateEditMode} value={status} />
             </div>
             }
-
-            <p>About: {props.profile.aboutMe}</p>
-            <p>Instagram: {props.profile.contacts.instagram}</p>
-            <p>GitHub: {props.profile.contacts.github}</p>
-            <p>Looking for a job: {props.profile.lookingForAJob ? "true" : "false"}</p>
-            <p>Description: {props.profile.lookingForAJobDescription}</p>
+            <p><b>About me:</b> {props.profile.aboutMe}</p>
+            <p><b>Description:</b> {props.profile.lookingForAJobDescription}</p>
+            <div>
+                <b>Contacts:</b>
+                {Object.keys(props.profile.contacts).map(key => {
+                    return <Contact key={key} contactTitle={key} contactValue={props.profile.contacts[key]} />
+                })}
+            </div>
         </div>
     )
+}
+
+const Contact = ({contactTitle, contactValue}) => {
+    return <p className={style.contac}><em>{contactTitle}: </em> {contactValue}</p>
 }
 
 export default InfoWithHooks;

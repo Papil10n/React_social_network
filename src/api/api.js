@@ -20,7 +20,7 @@ export const usersAPI = {
         return instance.post(`follow/${id}`,);
     },
     getProfile(userId = 1 ) {
-        console.warn('Obsolete method. Please use profileAPI object')
+        // console.warn('Obsolete method. Please use profileAPI object')
         return profileAPI.getProfile(userId);
     },
 
@@ -48,4 +48,14 @@ export const profileAPI = {
     updateStatus(status) {
         return instance.put(`profile/status`, {status: status});
     },
+    savePhoto(photoFile) {
+        const formData = new FormData();
+        formData.append('image', photoFile)
+        return instance.put('profile/photo', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
+    },
+
 }
