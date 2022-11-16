@@ -1,7 +1,7 @@
 import React, {Suspense} from "react";
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import {Routes, Route, useLocation, useParams, BrowserRouter} from "react-router-dom";
+import {Routes, Route, useLocation, useParams, HashRouter} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -75,11 +75,11 @@ let AppContainer = compose(
     withRouter)(App);
 
 const SocialNetworkApp = (props) => {
-    return <BrowserRouter>
+    return <HashRouter>
         <Provider store={store}>
             <AppContainer/>
         </ Provider>
-    </BrowserRouter>
+    </HashRouter>
 }
 
 export default SocialNetworkApp;
