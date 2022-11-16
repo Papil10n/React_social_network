@@ -19,5 +19,21 @@
     padding: 1px 9px;
     border-radius: 50%;
     cursor: pointer;
-
+}
+.toggleBtn {
+    background: none;
+    color: white;
+    border: 1px solid white;
+    font-size: 20px;
+    border-radius: 15px;
+    padding: 5px;
+    transition: all 0.3s ease 0s;
+}
+.toggleBtn:hover {
+    background-color: #00cfff;
+    color: black;
+    border: 1px solid black;
+}
+.toggleBtn:active {
+    transform: scale(0.9);
 }
