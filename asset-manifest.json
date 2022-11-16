@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Papil10n/Social_network/static/css/main.167906da.css",
+    "main.js": "/Papil10n/Social_network/static/js/main.fee4f4a4.js",
+    "static/js/787.28cb0dcd.chunk.js": "/Papil10n/Social_network/static/js/787.28cb0dcd.chunk.js",
+    "static/media/preloader.gif": "/Papil10n/Social_network/static/media/preloader.23760f0b6607a07c359a.gif",
+    "static/media/user.png": "/Papil10n/Social_network/static/media/user.a732dc0bc8375a5515ac.png",
+    "index.html": "/Papil10n/Social_network/index.html",
+    "main.167906da.css.map": "/Papil10n/Social_network/static/css/main.167906da.css.map",
+    "main.fee4f4a4.js.map": "/Papil10n/Social_network/static/js/main.fee4f4a4.js.map",
+    "787.28cb0dcd.chunk.js.map": "/Papil10n/Social_network/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.167906da.css",
+    "static/js/main.fee4f4a4.js"
+  ]
+}
