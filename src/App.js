@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Suspense} from "react";
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import {Routes, Route, useLocation, useParams, BrowserRouter} from "react-router-dom";
@@ -32,22 +32,18 @@ class App extends React.Component {
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Routes>
-                        <Route path='/login' element={<LoginPage/>}/>
-                        <Route path='/profile/:userId'
-                               element={<ProfileContainer/>}/>
-                        <Route path='/profile'
-                               element={<ProfileContainer/>}/>
-                        <Route path='/users'
-                               element={<UsersContainer/>}/>
-                        <Route path='/dialogs/*'
-                               element={<DialogsContainer/>}/>
-                        <Route path='/news'
-                               element={<News/>}/>
-                        <Route path='/music'
-                               element={<Music/>}/>
-                        <Route path='/settings'
-                               element={<Settings/>}/>
-
+                        <Route path="/profile/:userID" element={<ProfileContainer/>}/>
+                        <Route path="/profile" element={<ProfileContainer/>}/>
+                        <Route exact path="/dialogs/*" element={
+                            <Suspense fallback={<div> <Preloader/> </div>}>
+                                <DialogsContainer/>
+                            </Suspense>
+                        }/>
+                        <Route path="/news" element={<News/>}/>
+                        <Route path="/music" element={<Music/>}/>
+                        <Route path="/users" element={<UsersContainer/>}/>
+                        <Route path="/settings" element={<Settings/>}/>
+                        <Route path="/login" element={<LoginPage/>}/>
                     </Routes>
                 </div>
             </div>
