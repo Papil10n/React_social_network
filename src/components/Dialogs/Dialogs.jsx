@@ -11,7 +11,7 @@ import {maxLengthCreator, required} from "../../utils/Validators/validator";
 const Dialogs = (props) => {
     let state = props.dialogsPage;
 
-    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id} src={d.img}/>);
+    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id}/>);
     let messagesElements = state.messages.map(m => <Message message={m.message} key={m.id} side={m.from} key={m.id}/>);
 
     let addNewMessage = (values) => {

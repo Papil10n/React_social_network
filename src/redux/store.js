@@ -24,27 +24,27 @@ let store = {
                 {
                     id: 1,
                     name: 'Dimych',
-                    img: "https://static.vecteezy.com/system/resources/thumbnails/002/002/403/small/man-with-beard-avatar-character-isolated-icon-free-vector.jpg"
+                    img: null,
                 },
                 {
                     id: 2,
                     name: 'Andrew',
-                    img: "https://www.mediastorehouse.com/p/629/digital-illustration-gangster-smoking-cigar-13543859.jpg.webp"
+                    img: null,
                 },
                 {
                     id: 3,
                     name: 'Sveta',
-                    img: "https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small/beautiful-latin-woman-avatar-character-icon-free-vector.jpg"
+                    img: null,
                 },
                 {
                     id: 4,
                     name: 'Sasha',
-                    img: "https://png.pngtree.com/element_our/png/20181206/female-avatar-vector-icon-png_262142.jpg"
+                    img: null,
                 },
                 {
                     id: 5,
                     name: 'Viktor',
-                    img: "https://i0.wp.com/www.cssscript.com/wp-content/uploads/2020/12/Customizable-SVG-Avatar-Generator-In-JavaScript-Avataaars.js.png?fit=438%2C408&ssl=1"
+                    img: null,
                 },
             ],
             newMessageText: ''

@@ -32,9 +32,8 @@ const User = ({user, followingInProgress, unfollow_u, follow_f}) => {
                 }
             </div>
             <div className={styles.userAddInfo}>
-                <div>{user.status}</div>
-                <div className={styles.location}>{"user.location.country"}</div>
-                <div>{"user.location.city"}</div>
+                <div>Country: Ukraine</div>
+                <div>{user.status ? `Status : ${user.status}` : ''}</div>
             </div>
         </div>
     </div>
