@@ -14,8 +14,30 @@
     margin-inline: 30px;
 }
 .loginBlock {
-
+    color: white;
+    font-weight: bold;
+    font-family: "Leelawadee UI";
 }
+@media (max-width: 769px) {
+    .loginBlock {
+        font-size: 22px;
+    }
+    .loginBlock button {
+        font-size: 22px;
+    }
+}
+@media (max-width: 500px) {
+    .header{
+        height: 100px;
+    }
+    .loginBlock {
+        font-size: 35px;
+    }
+    .loginBlock button {
+        font-size: 35px;
+    }
+}
+
 .login {
     color: white;
     text-decoration: none;

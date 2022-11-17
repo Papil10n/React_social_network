@@ -9,9 +9,10 @@ const SAVE_PHOTO_SUCCESS = "SAVE_PHOTO_SUCCESS";
 
 let initialState = {
     posts: [
-        {id: 1, message: 'test проброса пропсов', likeCount: 5},
-        {id: 2, message: 'It\'s my first post', likeCount: 10},
-        {id: 3, message: 'Hi, how are you?', likeCount: 12},
+        {id: 1, message: 'first post', likeCount: 5},
+        {id: 2, message: 'check props', likeCount: 10},
+        {id: 3, message: '@eelonneMussk whereru?', likeCount: 12},
+        {id: 3, message: 'test attempt 2', likeCount: 12},
     ],
     profile: null,
     status: "",

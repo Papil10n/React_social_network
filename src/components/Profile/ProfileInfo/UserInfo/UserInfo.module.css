@@ -7,3 +7,9 @@
     max-width: 85%;
     margin: 0 auto;
 }
+
+@media (max-width: 769px) {
+    .about {
+        max-width: 90%;
+    }
+}

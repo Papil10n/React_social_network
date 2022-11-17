@@ -72,3 +72,29 @@
 .formSummaryError {
     border: 1px solid red;
 }
+@media (max-width: 769px) {
+    .fileInput:before {
+        font-size: 20px;
+    }
+    .fileInput {
+        width: 160px;
+        top: 370px;
+    }
+    .info {
+        font-size: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+    .info div, .info span, .info b, .info p, .info input {
+        font-size: 30px;
+    }
+    .editBtn, .saveBtn {
+        font-size: 25px;
+    }
+    .job{
+        font-size: 30px;
+    }
+}
+@media (max-width: 500px) {
+
+}

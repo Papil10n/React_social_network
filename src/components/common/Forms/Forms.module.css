@@ -1,5 +1,8 @@
 .form {
-
+}
+@media (max-width: 769px) {
+    .form input, .form, .form span, .form div {
+    }
 }
 
 .form.error input, .form.error textarea {

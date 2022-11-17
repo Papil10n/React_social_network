@@ -2,19 +2,30 @@
     display: grid;
     width: 1200px;
     margin: 0 auto;
-
     grid-template-areas:
-  "header header"
-  "nav content";
+        "header header"
+        "nav content";
     grid-template-rows: 70px 1fr;
     grid-template-columns: 2fr 10fr;
-    /* grid-gap: 10px; */
+}
+
+@media (max-width: 769px) {
+    .app-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    body {
+        background-color: #1e2d56;
+    }
+}
+@media (max-width: 500px) {
+
 }
 
 .app-wrapper-content {
+    flex: 0 1 900px;
     grid-area: content;
     background-color: #1e2d56;
     color: white;
     padding: 10px;
-    min-height: 650px;
 }

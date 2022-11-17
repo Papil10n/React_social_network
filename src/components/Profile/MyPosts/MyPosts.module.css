@@ -14,3 +14,23 @@
 .textareaBlock textarea{
     resize: none;
 }
+@media (max-width: 769px) {
+    .postsBlock {
+        margin-top: 0px;
+        text-align: center;
+    }
+    .textareaBlock textarea{
+        width: 1000px;
+        height: 130px;
+        margin: 0 auto;
+    }
+    .postsBlock, .title, .textareaBlock textarea, .postsBlock button{
+        font-size: 30px;
+    }
+    .posts {
+        width: 1000px;
+        margin: 0 auto;
+        padding: 10px;
+
+    }
+}

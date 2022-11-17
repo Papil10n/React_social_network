@@ -13,11 +13,20 @@
     border-radius: 50%;
     width: 50px;
 }
+@media (max-width: 500px) {
+    .img img{
+        width: 75px;
+    }
+    .text{
+        font-size: 35px !important;
+    }
+}
 
 .text {
     color: white;
     font-family: Bahnschrift;
     line-height: 1px;
+    font-size: 22px;
 }
 
 .substring {

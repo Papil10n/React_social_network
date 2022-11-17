@@ -1,8 +1,21 @@
 .item {
-   color: greenyellow;
+   color: #cecece;
+   font-family: Arial;
 }
 .item img {
    width: 50px;
    border-radius: 30px;
-
+}
+@media (max-width: 769px) {
+   .item {
+      border: 1px solid white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      margin: 10px;
+   }
+   .item img {
+      width: 90px;
+   }
 }
