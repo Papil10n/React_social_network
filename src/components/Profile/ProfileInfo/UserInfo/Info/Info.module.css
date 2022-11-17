@@ -1,18 +1,22 @@
+
 .info {
     margin-top: 0px;
-    line-height: 5px;
+    line-height: 1;
     font-family: Arial;
     font-size: 16px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: baseline;
-    gap: 25px;
 }
 .contac {
     line-height: 1px;
     letter-spacing: 1.5px;
 }
-
+.formData {
+    position: relative;
+}
+.inputStatus{
+    width: 300px;
+    font-size: 16px;
+    padding: 5px;
+}
 .status {
     line-height: normal;
 }
@@ -20,8 +24,8 @@
     position: absolute;
     z-index: 100;
     width: 118px;
-    top: 95px;
-    left: 86px;
+    top: 272px;
+    left: 93px;
     transition: all 0.3s ease 0s;
     opacity: 50%;
 }
@@ -32,7 +36,7 @@
     visibility: hidden;
 }
 .fileInput::before {
-    content: 'Select some files';
+    content: 'Change image';
     display: inline-block;
     background-color: #00cfff;
     border: 1px solid black;
@@ -49,4 +53,22 @@
 .fileInput:hover::before {
     border-color: white;
 }
-
+.contacts{
+    position: relative;
+}
+.editBtn {
+    z-index: 100;
+    top: -8px;
+    left: 80px;
+}
+.profileDataForm {
+    position: relative;
+}
+.saveBtn {
+    width: 50px;
+    top: -8px;
+    left: 45px;
+}
+.formSummaryError {
+    border: 1px solid red;
+}

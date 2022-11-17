@@ -3,7 +3,7 @@ import UserInfo from "./UserInfo/UserInfo";
 import Preloader from "../../common/Preloader/Preloader";
 import style from "./UserInfo/Info/Info.module.css";
 
-const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
+const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
     if (!profile) {
         return <Preloader />
     } else {
@@ -21,7 +21,7 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
                     </img>
                     { isOwner && <input className={style.fileInput} type={"file"} onChange={mainPhotoSelect} />}
                 </div>
-                <UserInfo profile={profile} status={status} updateStatus={updateStatus}/>
+                <UserInfo profile={profile} saveProfile={saveProfile} status={status} isOwner={isOwner} updateStatus={updateStatus}/>
             </div>
         )
     }

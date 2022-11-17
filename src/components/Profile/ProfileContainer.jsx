@@ -1,7 +1,7 @@
 import React from "react";
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {getStatus, getUserProfile, savePhoto, updateStatus} from "../../redux/profile-reducer";
+import {getStatus, getUserProfile, savePhoto, saveProfile, updateStatus} from "../../redux/profile-reducer";
 import {Navigate, useLocation, useParams} from "react-router-dom";
 import {toggleIsFetching} from "../../redux/users-reducer";
 import Preloader from "../common/Preloader/Preloader";
@@ -39,7 +39,7 @@ class ProfileContainer extends React.Component {
                     <Preloader/>
                     :
                     <Profile {...this.props} isOwner={!this.props.router.params.userID} savePhoto={this.props.savePhoto}
-                             profile={this.props.profile} status={this.props.status}
+                             profile={this.props.profile} status={this.props.status} saveProfile={this.props.saveProfile}
                              updateStatus={this.props.updateStatus}/>
             }
         </>
@@ -71,7 +71,7 @@ function withRouter(Component) {
 
 export default compose(
     connect(mapStateToProps, {
-        toggleIsFetching, getUserProfile, getStatus, updateStatus, savePhoto
+        toggleIsFetching, getUserProfile, getStatus, updateStatus, savePhoto, saveProfile
     }),
     withRouter,
     withAuthRedirect,
