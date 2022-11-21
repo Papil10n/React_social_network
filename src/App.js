@@ -1,7 +1,7 @@
 import React, {Suspense} from "react";
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import {Routes, Route, useLocation, useParams, HashRouter} from "react-router-dom";
+import {Routes, Route, useLocation, useParams, BrowserRouter, Navigate} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -18,8 +18,16 @@ import store from "./redux/redux-store";
 
 
 class App extends React.Component {
+    catchAllUnhandleError = (promiseRejectionEvent) => {
+        // alert('some error occured');
+        // console.error(promiseRejectionEvent)
+    }
     componentDidMount() {
         this.props.initializeApp();
+        window.addEventListener("unhandledrejection", this.catchAllUnhandleError);
+    }
+    componentWillUnmount() {
+        window.removeEventListener("unhandledrejection", this.catchAllUnhandleError);
     }
 
     render() {
@@ -32,6 +40,7 @@ class App extends React.Component {
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Routes>
+                        <Route path="/" element={<Navigate to="/profile" />}/>
                         <Route path="/profile/:userID" element={<ProfileContainer/>}/>
                         <Route path="/profile" element={<ProfileContainer/>}/>
                         <Route exact path="/dialogs/*" element={
@@ -44,6 +53,7 @@ class App extends React.Component {
                         <Route path="/users" element={<UsersContainer/>}/>
                         <Route path="/settings" element={<Settings/>}/>
                         <Route path="/login" element={<LoginPage/>}/>
+                        <Route path="*" element={<div>404 NOT FOUND</div>}/>
                     </Routes>
                 </div>
             </div>
@@ -75,11 +85,11 @@ let AppContainer = compose(
     withRouter)(App);
 
 const SocialNetworkApp = (props) => {
-    return <HashRouter>
+    return <BrowserRouter>
         <Provider store={store}>
             <AppContainer/>
         </ Provider>
-    </HashRouter>
+    </BrowserRouter>
 }
 
 export default SocialNetworkApp;

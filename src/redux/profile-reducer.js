@@ -12,7 +12,7 @@ let initialState = {
         {id: 1, message: 'first post', likeCount: 5},
         {id: 2, message: 'check props', likeCount: 10},
         {id: 3, message: '@eelonneMussk whereru?', likeCount: 12},
-        {id: 3, message: 'test attempt 2', likeCount: 12},
+        {id: 4, message: 'test attempt 2', likeCount: 12},
     ],
     profile: null,
     status: "",
@@ -62,9 +62,13 @@ export const getStatus = (userId) => async (dispatch) => {
     dispatch(setStatus(response.data));
 }
 export const updateStatus = (status) => async (dispatch) => {
-    let response = await profileAPI.updateStatus(status)
-    if (response.data.resultCode === 0) {
-        dispatch(setStatus(status));
+    try {
+        let response = await profileAPI.updateStatus(status)
+        if (response.data.resultCode === 0) {
+            dispatch(setStatus(status));
+        }
+    } catch (error) {
+        alert(error.messages)
     }
 }
 export const savePhoto = (file) => async (dispatch) => {
