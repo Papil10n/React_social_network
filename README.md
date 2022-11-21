@@ -1,6 +1,8 @@
 # social_network
 
-Тестовые Email и Password
-Email: free@samuraijs.com
+To view the "social network" project, please use this login details:
 
+##
+Email: free@samuraijs.com
 Password: free
+##
