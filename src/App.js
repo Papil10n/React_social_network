@@ -85,7 +85,7 @@ let AppContainer = compose(
     withRouter)(App);
 
 const SocialNetworkApp = (props) => {
-    return <BrowserRouter>
+    return <BrowserRouter basename='/React_social_network'>
         <Provider store={store}>
             <AppContainer/>
         </ Provider>
